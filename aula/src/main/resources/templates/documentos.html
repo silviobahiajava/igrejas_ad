@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>cadastro de clientes</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<link rel="icon" href="/image/favicon.png" />
+
+<!-- Bootstrap core CSS -->
+<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css"
+	rel="stylesheet" />
+
+<!-- Custom styles for this template -->
+<link href="/css/style.css" rel="stylesheet" />
+<script src="/webjars/jquery/jquery.min.js"></script>
+	<script src="/webjars/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+		$(document).ready(function(){
+		    alert("DETALHES DO MEMBRO");
+		});
+
+</script>
+</head>
+<body>
+
+<!-- <div th:each="evento : ${evento}" class="container detalhesEvento"> -->
+<!-- 	<h5>Detalhes do Evento</h5> -->
+<!-- 		<div class="row"> -->
+<!-- 			<p>Nome: <span th:text="${evento.nome}"></span></p> -->
+<!-- 			<p>Local: <span th:text="${evento.local}"></span></p> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
+	
+<!-- 	<div class="container formConvidado"> -->
+<!-- 		<form method="post" th:object="${convidado}"> -->
+<!-- 			Nome: <input type="text" value="" name="nomeConvidado" placeholder="Nome Completo"/> -->
+<!-- 			Rg: <input type="text" value="" name="rg" placeholder="AA-00.000.000" class="validate"/> -->
+<!-- 			<button class="waves-effect waves-light btn" type="submit">Adicionar</button> -->
+<!-- 		</form> -->
+<!-- 		</div> -->
+
+		
+<!-- 		<table class="container tabelaConvidado"> -->
+<!-- 		<thead> -->
+<!-- 			<tr> -->
+<!-- 				<th>Nome Convidado</th> -->
+<!-- 				<th>RG</th> -->
+<!-- 				<th>Deletar</th> -->
+<!-- 			</tr> -->
+<!-- 		</thead> -->
+<!-- 		<tbody> -->
+<!-- 			<tr th:each="convidado : ${convidados}"> -->
+<!-- 				<td><span th:text="${convidado.nomeConvidado}"></span></td> -->
+<!-- 				<td><span th:text="${convidado.rg}"></span></td> -->
+<!-- 				<td><a class="waves-effect waves-light btn-small" th:href="${(#mvc.url('EC#deletarConvidado').arg(0, convidado.rg)).build()}"><i class="material-icons left">delete</i></a></td> -->
+<!-- 			</tr> -->
+<!-- 		</tbody> -->
+<!-- 	</table> -->
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div th:each="m :${membro}">
+  <h5>Detalhes do Membro </h5>
+ <a th:href="@{/igrejas/listarmembros}" >ver todos membros</a>       	
+	     		
+	     		
+		<div class="row">
+			<p>Nome: <span th:text="${m.nome}"></span></p>
+			<p>Local: <span th:text="${m.nacionalidade}"></span></p>
+		</div>
+  </div>
+  
+  <div class="container">
+  <div class="row">
+    
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          
+          <form 
+          	method="post"
+          	id="frmCadastro" 
+          	th:object="${documentacao}" 
+          	th:action="@{/igrejas/{codigo}/cadastrardocumento(codigo=${cod})}" >
+          <h4>Adicionar Documentos</h4>
+            <div class="form-group">
+              <label for="rg">RG:</label>
+              <input 
+              	class="form-control" 
+              	type="text" 
+              	name="rg" 
+              	th:field="*{rg}"
+              	id="rg" 
+              	placeholder="digite o rg">
+            </div>
+            <div class="form-group">
+              <label for="cpf">CPF:</label>
+             <input 
+              	class="form-control" 
+              	type="text" 
+              	name="cpf" 
+              	th:field="*{cpf}"
+              	id="cpf" 
+              	>
+              </div>
+              <div class="form-group text-center">
+              <button type="submit" class="btn btn-primary">ADICIONAR</button>
+            </div>
+            </form>
+          </div>
+          
+          <table>
+		<thead>
+			<tr>
+				<th>RG</th>
+				<th>CPF</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="ld : ${listadocumentos}">
+				<td><span th:text="${ld.rg}"></span></td>
+				<td><span th:text="${ld.cpf}"></span></td>
+			</tr>
+		</tbody>
+	</table>
+	
+        </div>
+      </div>
+    </div>
+  </div> 
+  
+
+</body>
+</html>

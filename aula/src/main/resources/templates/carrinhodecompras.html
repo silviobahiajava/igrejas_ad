@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>Carrinho de compras</title>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <link rel="icon" href="/image/favicon.png"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom styles for this template -->
+    <link href="/css/style.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+       <h1>Itens do carrinho</h1>
+      
+       
+	     <div class="container">
+	      
+	      
+	     
+       <table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">codigo</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Cidade</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Mãe</th>
+      
+      <th scope="col">ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="lista:${listaProdutos}">
+       <td th:text="${lista.codigo}"/>
+     
+       <td th:text="${lista.descricao}"/>
+         
+    </tr>
+   
+  </tbody>
+</table>
+	<div class="row" style="margin-left:50%">
+ <center>
+ 	
+ 
+ 
+ 
+     <span th:if="${membros.hasPrevious()}">
+         <a style="color:red;font-size:20px;"  th:href="@{/igrejas/membrospag(page=${membros.number-1}, size=${membros.size},nome=${nome},naturalidade=${naturalidade})}">Anterior</a>
+     </span>
+ 
+    <th:block th:each="i: ${#numbers.sequence(0, membros.totalPages - 1)}"> 
+            <a  style="color:blue;font-size:20px;" th:href="@{/igrejas/membrospag(page=${i}, size=${membros.size},nome=${nome},naturalidade=${naturalidade})}">[[ ${i} + 1 ]]</a>
+    </th:block>
+    
+    <span th:if="${membros.hasNext()}">
+    
+         <a style="color:green;font-size:20px;"  th:href="@{/igrejas/membrospag(page=${membros.number+1}, size=${membros.size},nome=${nome},naturalidade=${naturalidade})}">Próximo</a>
+     </span>
+    
+ </center>
+</div>    
+	     
+</body>
+</html>

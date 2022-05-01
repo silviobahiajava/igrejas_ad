@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CLIENTE_PDF" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9438a323-97eb-4091-9f52-832f0a95749a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="IGREJA_DataAdapter.xml"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="cpfCliente" class="java.lang.String">
+		<fieldDescription><![CDATA[cpfCliente]]></fieldDescription>
+	</field>
+	<field name="nomeCliente" class="java.lang.String">
+		<fieldDescription><![CDATA[nomeCliente]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="220" y="30" width="160" height="30" uuid="1f3e02a2-e8bb-4451-a76f-cef8f1a6ac75"/>
+				<text><![CDATA[RELATORIO DE CLIENTES]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="-10" y="30" width="100" height="30" uuid="a01a5b90-3344-45ca-b813-c1da4329b104">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bd5cb401-2425-42b4-9216-46104e1eadef"/>
+				</reportElement>
+				<text><![CDATA[nomeCliente]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="47" splitType="Stretch">
+			<textField>
+				<reportElement x="-10" y="0" width="280" height="30" uuid="800ac20b-e4ec-443c-9524-e93e494f7243">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bd5cb401-2425-42b4-9216-46104e1eadef"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nomeCliente}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

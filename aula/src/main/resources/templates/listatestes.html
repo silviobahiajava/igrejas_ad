@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>cadastro de clientes</title>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <link rel="icon" href="/image/favicon.png"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom styles for this template -->
+    <link href="/css/style.css" rel="stylesheet"/>
+    <style type="text/css">
+table.striped>tbody>tr:nth-child(odd) {
+	background-color: rgba(158, 154, 154, 0.5);
+}
+
+form input[type=submit] {
+	color: white;
+}
+
+table {
+ width: 100%;
+}
+
+table td, table th {
+ border: 1px solid grey;
+}
+
+table th {
+ background: #eee;
+}
+
+</style>
+</head>
+
+<body>
+
+       <h1>Testes cadastrados</h1>
+      
+       <a th:href="@{/testes/cadastro}" >
+	        novo teste
+	     </a>
+       <table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">codigo</th>
+     <th scope="col">nome</th>
+      <th scope="col">data</th>
+      <th scope="col">data cadastro</th>
+      <th scope="col">foto</th>
+      <th scope="col">ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="t:${testes.content}">
+       <td th:text="${t.codigo}"/>
+        <td th:text="${t.nome}"/>
+       <td th:text="${t.dataStr}"/>
+       <td th:text="${#dates.format(t.dataCadastro, 'dd/MM/yyyy')}"></td>
+       <td><img th:src="@{/testes/{imagem}/mostrarImagem(imagem=${t.nomeImagem})}" width="50" height="50"/></td>
+       <td> 
+ 	     <a href="#"> 
+ 	        editar 
+ 	     </a>
+ 	      <a href="#">
+ 	        excluir 
+ 	     </a>
+	  </td> 
+    </tr>
+   
+  </tbody>
+</table>
+
+
+
+	<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+	  
+</body>
+</html>

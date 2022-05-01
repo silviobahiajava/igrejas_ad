@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>cadastro de clientes</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<link rel="icon" href="/image/favicon.png" />
+
+<!-- Bootstrap core CSS -->
+<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css"
+	rel="stylesheet" />
+
+<!-- Custom styles for this template -->
+<link href="/css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+				<div class="col-xs-12 col-md-12 col-lg-12">
+					<h2>CADASTRO DE TESTES PARA MOTORISTAS DA ESCOLA SOUZA CURSOS</h2>
+				</div>
+			</div>
+		<form action="/testes/salvar" 
+			th:object="${teste}" 
+			enctype="multipart/form-data"
+			method="POST">
+		<div class="row">
+				<div class="col-xs-12 col-md-3 col-lg-3"  >
+					<label for="codigo">codigo</label>
+				</div>
+				<div class="col-xs-12 col-md-9 col-lg-9" >
+					 <input type="text" name="codigo"
+						th:field="*{codigo}" readonly="readonly" class="form-control"
+						id="codigo" aria-describedby="codigo" />
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-xs-12 col-md-4 col-lg-4" >
+					<label for="nome">Nome do candidato</label> 
+					<input type="text" name="nome"
+						th:field="*{nome}" class="form-control" id="nome"
+						aria-describedby="nome" />
+				</div>
+				<div class="col-xs-12 col-md-4 col-lg-4" >
+					<label for="data">Data do teste</label> 
+					<input type="date" name="data"
+						th:field="*{data}" class="form-control" id="data"
+						aria-describedby="data" />
+				</div>
+				<div class="col-xs-12 col-md-4 col-lg-4" >
+					<label for="data">Data do cadastro</label> 
+					<input type="date"
+						name="dataCadastro" th:field="*{dataCadastro}"
+						class="form-control" id="dataCadastro"
+						aria-describedby="dataCadastro" />
+				</div>
+				</div>
+				<div class="row">
+				<div class="col-xs-12 col-md-4 col-lg-4" >
+					<label for="file">Foto do Candidato</label> 
+					<input type="file"
+						name="file" 
+						class="form-control" id="file"
+						aria-describedby="file" />
+				</div>
+				</div>
+				<div class="row">
+				<div class="col-xs-12 col-md-3 col-lg-3" >
+					<button type="submit" class="btn btn-primary">cadastrar</button>
+				</div>
+				<div class="col-xs-12 col-md-3 col-lg-3" >
+					<a href="http://localhost:8080/testes/listartestes">testes</a>
+				</div>
+				</div>
+				
+			</form>
+		
+	</div>
+	
+
+	
+
+
+</body>
+</html>

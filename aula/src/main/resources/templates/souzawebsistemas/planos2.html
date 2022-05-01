@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>Souza Web Sistemas</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<link rel="icon" href="/img/favicon.png" />
+
+<!-- Bootstrap core CSS -->
+<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css"
+	rel="stylesheet" />
+
+<!-- Custom styles for this template -->
+ <link rel="stylesheet" href="/css/estilo1.css">
+<style>
+ #fotos{
+ margin:0 auto;
+ width:600px;
+ height:300;
+ margin-top:150px;
+ }
+ #fotos ul{
+ margin:0;
+ padding:0;
+ list-style:none;
+ }
+ body{
+ 	 background: url('/img/FOTOS/FUNDO4.jpg')no-repeat;
+ 	 background-size:cover;
+ }
+</style>
+
+	
+</head>
+<body>
+<header>
+    <div class="container" id="nav-container">
+      <!-- add essa class -->
+      <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <a class="navbar-brand" href="index.html">
+          <img id="logo" src="/img/hdcagency_logo.svg" alt="SouzaWeb Sistemas">SouzaWeb Sistemas
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" id="home-menu" th:href="@{/souzawebsistemas/inicio}">home</a>
+            <a class="nav-item nav-link" id="about-menu" href="#">A agência</a>
+            <a class="nav-item nav-link" id="services-menu" href="#">Serviços</a>
+            <a class="nav-item nav-link" id="team-menu" href="#">Colaboradores</a>
+            <a class="nav-item nav-link" id="portfolio-menu" href="#">Projetos</a>
+            <a class="nav-item nav-link" id="contact-menu" href="#">Contato</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+
+<main>
+    	<div class="container-fluid   col-lg-6 mb-5 mb-lg-0" id="fotos">
+ 			<ul>
+ 				<li>
+ 				  	<a href="http://localhost:8080/souzawebsistemas/educacao/escolas">
+ 						<img 
+	 			 			src="/img/FOTOS/ESCOLA1.jpg"
+	 			 			class="media-object  img-responsive img-thumbnail  w-100 rounded-4 shadow-4">
+	 			 	</a>
+ 				</li>
+ 				
+ 				<li>
+ 					<a href="http://localhost:8080/souzawebsistemas/cristao/igrejas">
+ 					    <img 
+	 			 			src="/img/FOTOS/IGREJA1.jpg"
+	 			 			class="media-object  img-responsive img-thumbnail w-100 rounded-4 shadow-4">
+	 			 	</a>
+ 				</li>
+ 				
+ 				<li>
+ 					<a href="http://localhost:8080/souzawebsistemas/comercial/padarias">
+ 					   <img 
+	 			 			src="/img/FOTOS/PADARIA1.jpg"
+	 			 			class="media-object  img-responsive img-thumbnail w-100 rounded-4 shadow-4">
+	 			 	</a>
+ 				</li>
+ 				<li>
+ 					<a href="http://localhost:8080/souzawebsistemas/comercial/lanchonetes">
+ 					   <img 
+	 			 			src="/img/FOTOS/lanchonete02.jpg"
+	 			 			class="media-object  img-responsive img-thumbnail w-100 rounded-4 shadow-4">
+	 			 	</a>
+ 				</li>
+ 				<li>
+ 					<a href="http://localhost:8080/souzawebsistemas/comercial/lojas">
+ 					   <img 
+	 			 			src="/img/FOTOS/LOJA1.jpg"
+	 			 			class="media-object  img-responsive img-thumbnail w-100 rounded-4 shadow-4">
+	 			 	</a>
+ 				</li>
+ 			
+ 			</ul>
+ 		</div>
+      
+     
+     
+     
+    
+      <!-- Newsletter -->
+      <div id="news-area">
+        <div class="container">
+          <div class="col-md-12">
+            <h3 class="main-title">Seja nosso cliente</h3>
+          </div>
+          <p>Tenha um sistema completo para seu negócio por apenas R$25,00 mensais</p>
+          <form action="">
+            <input type="text" class="form-control" id="email-input" name="email" placeholder="Seu melhor e-mail">
+            <input type="submit" id="news-btn" value="Inscrever">
+          </form>
+        </div>
+      </div>
+      <!-- Call to Action -->
+      <div id="call-area">
+        <div class="container">
+            <div class="row">
+              <p>Sistemas personalizados e completos</p>
+              <a class="btn btn-primary" id="call-btn" th:href="@{/souzawebsistemas/planos}">Assina já</a>
+            </div>
+          </div>
+      </div>
+    </div>
+  </main>
+  
+
+	<!-- Scripts do projeto -->
+  <script src="/js/scripts.js"></script>
+
+
+
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="/webjars/jquery/jquery.min.js"></script>
+	<script src="/webjars/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('[data-toggle="popover"]').popover();
+		});
+
+		$(document).ready(function() {
+			$(".navbar-toggle").click(function() {
+				$(".sidebar").toggleClass("sidebar-open");
+			})
+		});
+	</script>
+ 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script> 
+<!--  - 	<script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script> -->
+	<script type="text/javascript" src="/js/jquery.cycle.all.js"></script>
+	
+	<script type="text/javascript">
+	//alert("obrigado Jesus")
+	$(document).ready(function() {
+		
+	 	$("#fotos ul").cycle({
+		 	fx:'zoom'
+		 });
+	});
+	
+	</script>
+
+
+</body>
+</html>
